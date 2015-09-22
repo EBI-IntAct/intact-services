@@ -62,7 +62,6 @@
                     <configuration>
                         <remoteTagging>true</remoteTagging>
                         <goals>deploy</goals>
-                        <autoVersionSubmodules>true</autoVersionSubmodules>
                     </configuration>
                 </plugin>
                 <plugin>
