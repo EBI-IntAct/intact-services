@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
         <groupId>uk.ac.ebi.intact.maven</groupId>
@@ -31,24 +32,21 @@
     </properties>
 
     <modules>
-     <module>cv-update-runner</module>
-      <module>protein-update-runner</module>
-    <module>dataset-update-runner</module>
-    <module>imex-assigner-runner</module>
-    <module>intact-publication-exporter</module>
-     <module>intact-view</module>
-     <module>validator-view</module>
-     <module>health-check</module>
-     <module>intact-widgets</module>
-    <module>complex-indexer</module>
-<module>complex-view</module>
-<module>complex-ws</module>
-  </modules>
+        <module>cv-update-runner</module>
+        <module>protein-update-runner</module>
+        <module>dataset-update-runner</module>
+        <module>imex-assigner-runner</module>
+        <module>intact-publication-exporter</module>
+        <module>validator-view</module>
+        <module>health-check</module>
+        <module>intact-widgets</module>
+    </modules>
 
     <scm>
-        <connection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk</connection>
-        <developerConnection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk</developerConnection>
-        <url>http://code.google.com/p/intact/source/browse/repo/service/trunk</url>
+        <connection>scm:git:https://bitbucket.org/intact-ebi/intact-services.git</connection>
+        <developerConnection>scm:git:https://bitbucket.org/intact-ebi/intact-services.git</developerConnection>
+        <url>https://bitbucket.org/intact-ebi/intact-services</url>
+        <tag>HEAD</tag>
     </scm>
 
     <build>
@@ -57,23 +55,23 @@
 
         <pluginManagement>
             <plugins>
-               <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>maven-buildnumber-plugin</artifactId>
-                <version>0.9.4</version>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>create</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <doCheck>false</doCheck>
-                    <doUpdate>false</doUpdate>
-                </configuration>
-            </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>maven-buildnumber-plugin</artifactId>
+                    <version>0.9.4</version>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>create</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <doCheck>false</doCheck>
+                        <doUpdate>false</doUpdate>
+                    </configuration>
+                </plugin>
 
             </plugins>
         </pluginManagement>
@@ -99,10 +97,10 @@
                 <artifactId>log4j</artifactId>
                 <version>1.2.15</version>
                 <exclusions>
-                   <exclusion>
-                      <groupId>com.sun.jmx</groupId>
-                      <artifactId>jmxri</artifactId>
-                  </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.jmx</groupId>
+                        <artifactId>jmxri</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
 
@@ -141,10 +139,10 @@
     </dependencies>
 
     <repositories>
-         <repository>
-             <id>intact.nexus</id>
-             <name>IntAct Nexus</name>
-             <url>http://www.ebi.ac.uk/intact/maven/nexus/content/groups/public</url>
-         </repository>
+        <repository>
+            <id>intact.nexus</id>
+            <name>IntAct Nexus</name>
+            <url>http://www.ebi.ac.uk/intact/maven/nexus/content/groups/public</url>
+        </repository>
     </repositories>
 </project>
