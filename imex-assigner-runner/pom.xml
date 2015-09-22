@@ -11,7 +11,7 @@
     <parent>
         <groupId>uk.ac.ebi.intact.maven</groupId>
         <artifactId>intact-hibernate-master</artifactId>
-        <version>42</version>
+        <version>43</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -19,7 +19,7 @@
     <groupId>uk.ac.ebi.intact.service.sandbox</groupId>
     <artifactId>intact-view</artifactId>
     <packaging>war</packaging>
-    <version>4.1.5-SNAPSHOT</version>
+    <version>4.1.5</version>
 
     <name>IntAct Services :: View</name>
 
@@ -27,7 +27,8 @@
         <connection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk/intact-view</connection>
         <developerConnection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk/intact-view</developerConnection>
         <url>https://intact.googlecode.com/svn/repo/service/trunk/intact-view</url>
-    </scm>
+      <tag>service-master-3.0.1</tag>
+  </scm>
 
     <properties>
         <core.version>2.6.5</core.version>
@@ -453,7 +454,7 @@
         <dependency>
             <groupId>uk.ac.ebi.intact.commons</groupId>
             <artifactId>intact-commons</artifactId>
-            <version>2.1.9</version>
+            <version>2.1.10</version>
             <exclusions>
                 <exclusion>
                     <groupId>uk.ac.ebi.intact.core</groupId>
@@ -465,7 +466,7 @@
         <dependency>
             <groupId>uk.ac.ebi.intact.dataexchange</groupId>
             <artifactId>intact-cvutils</artifactId>
-            <version>2.1.9</version>
+            <version>3.0.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>lucene</groupId>
@@ -481,7 +482,7 @@
         <dependency>
             <groupId>uk.ac.ebi.intact.dataexchange.psimi</groupId>
             <artifactId>intact-psixml-exchange</artifactId>
-            <version>2.1.9</version>
+            <version>3.0.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>cpdetector</groupId>
@@ -580,7 +581,7 @@
         <dependency>
             <groupId>psidev.psi.mi</groupId>
             <artifactId>psimitab</artifactId>
-            <version>1.8.4.2</version>
+            <version>1.8.5</version>
         </dependency>
 
         <dependency>
