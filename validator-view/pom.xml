@@ -18,7 +18,7 @@
     <groupId>uk.ac.ebi.intact.service.validator</groupId>
     <artifactId>psimi-validator</artifactId>
     <packaging>war</packaging>
-    <version>3.0.1</version>
+    <version>3.0.2-SNAPSHOT</version>
 
     <name>IntAct Services :: PSI-MI Validator</name>
 
@@ -26,7 +26,7 @@
         <connection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk/validator-view</connection>
         <developerConnection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk/validator-view</developerConnection>
         <url>https://intact.googlecode.com/svn/repo/service/trunk/validator-view</url>
-      <tag>service-master-3.0.2</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <properties>
