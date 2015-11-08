@@ -12,7 +12,7 @@
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>service-master</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.2-SNAPSHOT</version>
+    <version>3.0.2</version>
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
@@ -45,7 +45,7 @@
         <connection>scm:git:https://bitbucket.org/intact-ebi/intact-services.git</connection>
         <developerConnection>scm:git:https://bitbucket.org/intact-ebi/intact-services.git</developerConnection>
         <url>https://bitbucket.org/intact-ebi/intact-services</url>
-        <tag>HEAD</tag>
+        <tag>service-master-3.0.2</tag>
     </scm>
 
     <build>
