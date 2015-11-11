@@ -3,12 +3,12 @@
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
-        <version>3.0.3-SNAPSHOT</version>
+        <version>3.0.3</version>
     </parent>
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>health-check</artifactId>
     <packaging>war</packaging>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
 
     <name>health-check Maven Webapp</name>
 
