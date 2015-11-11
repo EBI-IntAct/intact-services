@@ -3,21 +3,21 @@
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
-        <version>3.0.3</version>
+        <version>3.0.4-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>protein-update-runner</artifactId>
     <packaging>jar</packaging>
-    <version>1.1.5</version>
+    <version>1.1.6-SNAPSHOT</version>
 
     <name>Service :: Protein Update Runner</name>
 
     <scm>
         <connection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk/protein-update-runner</connection>
         <developerConnection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk/protein-update-runner</developerConnection>
-      <tag>service-master-3.0.3</tag>
+      <tag>HEAD</tag>
   </scm>
     <properties>
         <blast>false</blast>
