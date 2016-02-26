@@ -42,9 +42,9 @@
     </modules>
 
     <scm>
-        <connection>scm:git:https://bitbucket.org/intact-ebi/intact-services.git</connection>
-        <developerConnection>scm:git:https://bitbucket.org/intact-ebi/intact-services.git</developerConnection>
-        <url>https://bitbucket.org/intact-ebi/intact-services</url>
+        <connection>scm:git:https://bitbucket.org/intact-ebi/intact-services-master.git</connection>
+        <developerConnection>scm:git:https://bitbucket.org/intact-ebi/intact-services-master.git</developerConnection>
+        <url>https://bitbucket.org/intact-ebi/intact-services-master</url>
         <tag>HEAD</tag>
     </scm>
 
