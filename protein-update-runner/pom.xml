@@ -14,16 +14,11 @@
 
     <name>Service :: Protein Update Runner</name>
 
-    <scm>
-        <connection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk/protein-update-runner</connection>
-        <developerConnection>scm:svn:https://intact.googlecode.com/svn/repo/service/trunk/protein-update-runner</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
     <properties>
         <blast>false</blast>
         <db.url>${db.protocol}:${db.subprotocol}${db.separator}${db.alias}</db.url>
         <db.hbm2ddl>none</db.hbm2ddl>
-        <spring.version>3.1.2.RELEASE</spring.version>
+        <spring.version>3.2.9.RELEASE</spring.version>
     </properties>
 
     <build>
@@ -130,18 +125,6 @@
             <version>RELEASE</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>uk.ac.ebi.uniprot.kraken</groupId>-->
-            <!--<artifactId>uniprotjapi</artifactId>-->
-            <!--<version>RELEASE</version>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.springframework</groupId>-->
-                    <!--<artifactId>spring-context</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
-        <!--</dependency>-->
-
         <!-- Logging -->
         <dependency>
             <groupId>log4j</groupId>
@@ -186,7 +169,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>3.1.2.RELEASE</version>
+            <version>3.2.9.RELEASE</version>
             <optional>true</optional>
             <exclusions>
                 <exclusion>
@@ -195,15 +178,5 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>intact.nexus</id>
-            <name>IntAct Nexus</name>
-            <url>http://www.ebi.ac.uk/intact/maven/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
-
 </project>
