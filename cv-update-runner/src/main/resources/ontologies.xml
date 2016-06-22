@@ -2,8 +2,8 @@
 <cvSourceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:noNamespaceSchemaLocation="http://www.psidev.info/files/validator/CvSourceList.xsd">
 
-    <cvSource source="file" uri="http://raw.githubusercontent.com/MICommunity/psidev/master/psi/mi/rel25/data/psi-mi25.obo" format="OBO" name="PSI-MI"  identifier="MI"  version="2.5"/>
-    <cvSource source="OLS" uri="" format="OBO" name="PSI-MOD" identifier="MOD" version="latest in OLS"/>
-    <cvSource source="OLS" uri="" format="OBO" name="ECO" identifier="ECO" version="latest in OLS"/>
+    <cvSource source="OLS" uri="http://www.berkeleybop.org/ontologies/mi/mi.obo" format="OBO" name="PSI-MI"  identifier="MI"  version="2.5"/>
+    <cvSource source="OLS" uri="http://www.berkeleybop.org/ontologies/mod/mod.obo" format="OBO" name="PSI-MOD" identifier="MOD" version="latest in OLS"/>
+    <cvSource source="OLS" uri="http://www.berkeleybop.org/ontologies/eco/eco.obo" format="OBO" name="ECO" identifier="ECO" version="latest in OLS"/>
 
 </cvSourceList>

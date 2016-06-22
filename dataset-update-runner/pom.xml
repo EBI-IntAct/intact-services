@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
         <version>3.0.5-SNAPSHOT</version>
     </parent>
 
-  <artifactId>dataset-update-runner</artifactId>
-  <version>1.1.7-SNAPSHOT</version>
-
+    <artifactId>dataset-update-runner</artifactId>
     <name>Service :: Dataset Update Runner</name>
 
     <properties>
@@ -55,7 +54,7 @@
                             <arguments>
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
-                                <classpath />
+                                <classpath/>
                                 <argument>uk.ac.ebi.intact.service.SynapseDatasetUpdater</argument>
                                 <!-- repository where to find the log files -->
                                 <argument>${datasetReport}</argument>
@@ -87,7 +86,7 @@
                             <arguments>
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
-                                <classpath />
+                                <classpath/>
                                 <argument>uk.ac.ebi.intact.service.NdpkDatasetUpdater</argument>
                                 <!-- repository where to find the log files -->
                                 <argument>${datasetReport}</argument>
@@ -119,7 +118,7 @@
                             <arguments>
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
-                                <classpath />
+                                <classpath/>
                                 <argument>uk.ac.ebi.intact.service.ApoptosisDatasetUpdater</argument>
                                 <!-- repository where to find the log files -->
                                 <argument>${datasetReport}</argument>

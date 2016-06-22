@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
@@ -8,9 +9,7 @@
     </parent>
 
 
-    <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>intact-publication-exporter</artifactId>
-    <version>1.0.7-SNAPSHOT</version>
     <name>intact-publication-exporter</name>
 
     <properties>
@@ -43,7 +42,7 @@
                                 <argument>-classpath</argument>
                                 <!-- automatically creates the classpath using all project dependencies,
                                      also adding the project build directory -->
-                                <classpath />
+                                <classpath/>
                                 <argument>uk.ac.ebi.intact.service.ExportIntactPublicationToMitab</argument>
                                 <argument>${pubId}</argument>
                                 <argument>${version}</argument>
@@ -76,7 +75,7 @@
                                 <argument>-classpath</argument>
                                 <!-- automatically creates the classpath using all project dependencies,
                                      also adding the project build directory -->
-                                <classpath />
+                                <classpath/>
                                 <argument>uk.ac.ebi.intact.service.ExportIntactPublicationToXml</argument>
                                 <argument>${pubId}</argument>
                             </arguments>
@@ -108,7 +107,7 @@
                                 <argument>-classpath</argument>
                                 <!-- automatically creates the classpath using all project dependencies,
                                      also adding the project build directory -->
-                                <classpath />
+                                <classpath/>
                                 <argument>uk.ac.ebi.intact.service.ExportIntactPublicationToHtml</argument>
                                 <argument>${xmlFile}</argument>
                             </arguments>
