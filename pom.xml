@@ -27,8 +27,11 @@
 
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
-
-        <core.version>2.6.6-SNAPSHOT</core.version>
+        <spring.version>3.2.9.RELEASE</spring.version>
+        <dbupdates.version>2.1.13.1</dbupdates.version>
+        <core.version>2.6.11</core.version>
+        <bridges.version>2.1.19</bridges.version>
+        <dataexchange.version>3.0.3</dataexchange.version>
     </properties>
 
     <modules>
@@ -91,7 +94,13 @@
             <dependency>
                 <groupId>uk.ac.ebi.intact.core</groupId>
                 <artifactId>intact-core</artifactId>
-                <version>2.6.9</version>
+                <version>${core.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-context</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>uk.ac.ebi.intact.core</groupId>
@@ -133,6 +142,12 @@
                 <version>1.0.20070429</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>
@@ -160,21 +175,4 @@
             <url>http://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-snapshots/</url>
         </repository>
     </repositories>
-
-    <!-- Overwrites the previous repositories-->
-    <distributionManagement>
-        <!-- EBI repo -->
-        <repository>
-            <id>pst-release</id>
-            <name>EBI Nexus Repository</name>
-            <url>http://www.ebi.ac.uk/Tools/maven/repos/content/repositories/pst-release</url>
-        </repository>
-        <!-- EBI SNAPSHOT repo -->
-        <snapshotRepository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>pst-snapshots</id>
-            <name>EBI Nexus Snapshots Repository</name>
-            <url>http://www.ebi.ac.uk/Tools/maven/repos/content/repositories/pst-snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>
