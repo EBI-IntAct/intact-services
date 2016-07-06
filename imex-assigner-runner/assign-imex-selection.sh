@@ -16,3 +16,4 @@ MAVEN_PROFILE=$5
 echo "use profile ${MAVEN_PROFILE}"
 
 mvn -U clean install -Passign-selection,${MAVEN_PROFILE} -Dupdate.log.directory=$1 -Dic.username=$2 -Dic.password=$3 -Dic.endpoint=$4 -DinputFile=$6 -Dmaven.repo.local=repository -Dmaven.test.skip -Ddb=oracle
+./updateReport.sh $1
