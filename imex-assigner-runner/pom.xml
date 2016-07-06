@@ -36,7 +36,6 @@
     <profiles>
         <profile>
             <id>exec</id>
-
             <build>
                 <plugins>
                     <plugin>
@@ -230,5 +229,4 @@
         </dependency>
 
     </dependencies>
-
 </project>
