@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-         xmlns="http://maven.apache.org/POM/4.0.0">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
-        <version>3.0.6-SNAPSHOT</version>
+        <version>3.0.7-SNAPSHOT</version>
     </parent>
 
     <artifactId>imex-assigner-runner</artifactId>
@@ -54,7 +52,7 @@
                             <arguments>
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
-                                <classpath/>
+                                <classpath />
                                 <argument>-Djavax.net.ssl.trustStore=${keystore.path}</argument>
                                 <argument>-Djavax.net.ssl.keyStorePassword=${keystore.password}</argument>
                                 <argument>uk.ac.ebi.intact.service.ImexAssignerUpdater</argument>
@@ -84,7 +82,7 @@
                             <arguments>
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
-                                <classpath/>
+                                <classpath />
                                 <argument>-Djavax.net.ssl.trustStore=${keystore.path}</argument>
                                 <argument>-Djavax.net.ssl.keyStorePassword=${keystore.password}</argument>
                                 <argument>uk.ac.ebi.intact.service.ImexPublicationSelectionAssigner</argument>
@@ -117,7 +115,7 @@
                             <arguments>
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
-                                <classpath/>
+                                <classpath />
                                 <argument>-Djavax.net.ssl.trustStore=${keystore.path}</argument>
                                 <argument>-Djavax.net.ssl.keyStorePassword=${keystore.password}</argument>
                                 <argument>uk.ac.ebi.intact.service.ImexSelectionPublicationRegister</argument>
@@ -150,7 +148,7 @@
                             <arguments>
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
-                                <classpath/>
+                                <classpath />
                                 <argument>-Djavax.net.ssl.trustStore=${keystore.path}</argument>
                                 <argument>-Djavax.net.ssl.keyStorePassword=${keystore.password}</argument>
                                 <argument>uk.ac.ebi.intact.service.ImexIntactAdminGroupUpdater</argument>
