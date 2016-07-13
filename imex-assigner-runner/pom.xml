@@ -7,8 +7,9 @@
         <version>3.0.6</version>
     </parent>
 
-    <artifactId>dataset-update-runner</artifactId>
-    <name>Service :: Dataset Update Runner</name>
+    <artifactId>imex-assigner-runner</artifactId>
+    <name>Service :: IMEx assigner and updater</name>
+
 
     <properties>
         <db.url>${db.protocol}:${db.subprotocol}${db.separator}${db.alias}</db.url>
@@ -32,8 +33,7 @@
 
     <profiles>
         <profile>
-            <id>update-synapse</id>
-
+            <id>exec</id>
             <build>
                 <plugins>
                     <plugin>
@@ -53,10 +53,9 @@
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
                                 <classpath />
-                                <argument>uk.ac.ebi.intact.service.SynapseDatasetUpdater</argument>
-                                <!-- repository where to find the log files -->
-                                <argument>${datasetReport}</argument>
-                                <argument>${selectionReport}</argument>
+                                <argument>-Djavax.net.ssl.trustStore=${keystore.path}</argument>
+                                <argument>-Djavax.net.ssl.keyStorePassword=${keystore.password}</argument>
+                                <argument>uk.ac.ebi.intact.service.ImexAssignerUpdater</argument>
                             </arguments>
                         </configuration>
                     </plugin>
@@ -64,8 +63,7 @@
             </build>
         </profile>
         <profile>
-            <id>update-ndpk</id>
-
+            <id>assign-selection</id>
             <build>
                 <plugins>
                     <plugin>
@@ -85,18 +83,19 @@
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
                                 <classpath />
-                                <argument>uk.ac.ebi.intact.service.NdpkDatasetUpdater</argument>
-                                <!-- repository where to find the log files -->
-                                <argument>${datasetReport}</argument>
-                                <argument>${selectionReport}</argument>
+                                <argument>-Djavax.net.ssl.trustStore=${keystore.path}</argument>
+                                <argument>-Djavax.net.ssl.keyStorePassword=${keystore.password}</argument>
+                                <argument>uk.ac.ebi.intact.service.ImexPublicationSelectionAssigner</argument>
+                                <argument>${inputFile}</argument>
                             </arguments>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
         </profile>
+
         <profile>
-            <id>update-apoptosis</id>
+            <id>register-selection</id>
 
             <build>
                 <plugins>
@@ -117,10 +116,44 @@
                                 <argument>-Xmx2024m</argument>
                                 <argument>-classpath</argument>
                                 <classpath />
-                                <argument>uk.ac.ebi.intact.service.ApoptosisDatasetUpdater</argument>
-                                <!-- repository where to find the log files -->
-                                <argument>${datasetReport}</argument>
-                                <argument>${selectionReport}</argument>
+                                <argument>-Djavax.net.ssl.trustStore=${keystore.path}</argument>
+                                <argument>-Djavax.net.ssl.keyStorePassword=${keystore.password}</argument>
+                                <argument>uk.ac.ebi.intact.service.ImexSelectionPublicationRegister</argument>
+                                <argument>${inputFile}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>reset-admin</id>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-Xmx2024m</argument>
+                                <argument>-classpath</argument>
+                                <classpath />
+                                <argument>-Djavax.net.ssl.trustStore=${keystore.path}</argument>
+                                <argument>-Djavax.net.ssl.keyStorePassword=${keystore.password}</argument>
+                                <argument>uk.ac.ebi.intact.service.ImexIntactAdminGroupUpdater</argument>
+                                <argument>${inputFile}</argument>
+                                <argument>${adminToRemove}</argument>
                             </arguments>
                         </configuration>
                     </plugin>
@@ -132,12 +165,17 @@
 
     <dependencies>
 
-
         <!-- Intact -->
         <dependency>
-            <groupId>uk.ac.ebi.intact.dbupdate</groupId>
-            <artifactId>intact-datasets-update</artifactId>
-            <version>${dbupdates.version}</version>
+            <groupId>uk.ac.ebi.intact.dataexchange.imex</groupId>
+            <artifactId>imex-id-update</artifactId>
+            <version>2.1.10.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>uk.ac.ebi.intact.core</groupId>
+            <artifactId>intact-core</artifactId>
+            <version>2.6.9</version>
         </dependency>
 
         <!-- Logging -->
@@ -184,7 +222,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
+            <version>3.1.2.RELEASE</version>
             <optional>true</optional>
             <exclusions>
                 <exclusion>
@@ -193,5 +231,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
     </dependencies>
 </project>
