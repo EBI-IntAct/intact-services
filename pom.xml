@@ -41,7 +41,7 @@
         <module>intact-publication-exporter</module>
         <module>health-check</module>
         <module>intact-widgets</module>
-        <!--<module>mutation-update-runner</module>-->
+        <module>mutation-update-runner</module>
     </modules>
 
     <scm>
