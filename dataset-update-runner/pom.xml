@@ -4,7 +4,7 @@
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
-        <version>3.0.8-SNAPSHOT</version>
+        <version>3.0.7</version>
     </parent>
 
     <artifactId>dataset-update-runner</artifactId>
