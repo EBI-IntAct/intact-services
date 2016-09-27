@@ -12,7 +12,7 @@
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>service-master</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.6</version>
+    <version>3.0.7</version>
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
@@ -41,6 +41,7 @@
         <module>intact-publication-exporter</module>
         <module>health-check</module>
         <module>intact-widgets</module>
+        <!--<module>mutation-update-runner</module>-->
     </modules>
 
     <scm>
