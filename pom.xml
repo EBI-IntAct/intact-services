@@ -27,9 +27,9 @@
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
         <spring.version>3.2.9.RELEASE</spring.version>
-        <dbupdates.version>2.1.13</dbupdates.version>
+        <dbupdates.version>2.1.14-SNAPSHOT</dbupdates.version>
         <core.version>2.6.11</core.version>
-        <bridges.version>2.1.19</bridges.version>
+        <bridges.version>2.1.21-SNAPSHOT</bridges.version>
         <dataexchange.version>3.0.3</dataexchange.version>
     </properties>
 
@@ -41,7 +41,7 @@
         <module>intact-publication-exporter</module>
         <module>health-check</module>
         <module>intact-widgets</module>
-        <module>mutation-update-runner</module>
+        <!--<module>mutation-update-runner</module>-->
     </modules>
 
     <scm>
@@ -170,8 +170,9 @@
 
     <repositories>
         <repository>
-            <id>nexus-ebi-repo-old</id>
-            <url>http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo/</url>
+            <id>ebi-repo</id>
+            <name>ebi-repo</name>
+            <url>http://www.ebi.ac.uk/~maven/m2repo</url>
         </repository>
         <repository>
             <id>nexus-ebi-release-repo</id>
