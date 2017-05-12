@@ -3,12 +3,11 @@
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
-        <version>3.0.7</version>
+        <version>3.0.8</version>
     </parent>
     <artifactId>health-check</artifactId>
     <packaging>war</packaging>
-
-    <name>health-check Maven Webapp</name>
+    <name>Service :: IntAct Health Check</name>
 
     <!--
          This applications is used as a health check. The load balancers decide on a Tomcat's state based on the outcome of:

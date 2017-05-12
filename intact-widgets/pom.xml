@@ -3,7 +3,7 @@
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
-        <version>3.0.7</version>
+        <version>3.0.8</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -11,7 +11,7 @@
     <artifactId>intact-widgets</artifactId>
 
     <packaging>war</packaging>
-    <name>intact-widgets Maven Webapp</name>
+    <name>Service :: Intact Widgets</name>
     <url>http://maven.apache.org</url>
 
     <properties>

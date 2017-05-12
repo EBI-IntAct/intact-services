@@ -12,7 +12,7 @@
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>service-master</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.7</version>
+    <version>3.0.8</version>
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
@@ -27,9 +27,9 @@
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
         <spring.version>3.2.9.RELEASE</spring.version>
-        <dbupdates.version>2.1.13</dbupdates.version>
+        <dbupdates.version>2.1.14</dbupdates.version>
         <core.version>2.6.11</core.version>
-        <bridges.version>2.1.19</bridges.version>
+        <bridges.version>2.1.21</bridges.version>
         <dataexchange.version>3.0.3</dataexchange.version>
     </properties>
 
@@ -45,15 +45,15 @@
     </modules>
 
     <scm>
-        <connection>scm:git:https://bitbucket.org/intact-ebi/intact-services-master.git</connection>
-        <developerConnection>scm:git:https://bitbucket.org/intact-ebi/intact-services-master.git</developerConnection>
-        <url>https://bitbucket.org/intact-ebi/intact-services-master</url>
+        <connection>scm:git:https://github.com/EBI-IntAct/intact-services.git</connection>
+        <developerConnection>scm:git:https://github.com/EBI-IntAct/intact-services.git</developerConnection>
+        <url>https://github.com/EBI-IntAct/intact-services</url>
         <tag>HEAD</tag>
     </scm>
 
     <build>
 
-        <finalName>intact-${artifactId}-${db.alias}-${version}-${buildNumber}</finalName>
+        <finalName>intact-${artifactId}-${db.alias}-${project.version}</finalName>
 
         <pluginManagement>
             <plugins>

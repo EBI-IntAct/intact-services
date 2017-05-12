@@ -4,11 +4,11 @@
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
-        <version>3.0.7</version>
+        <version>3.0.8</version>
     </parent>
 
     <artifactId>imex-assigner-runner</artifactId>
-    <name>Service :: IMEx assigner and updater</name>
+    <name>Service :: IMEx Assigner and Updater</name>
 
 
     <properties>
