@@ -9,7 +9,7 @@
 
 
     <artifactId>intact-publication-exporter</artifactId>
-    <name>intact-publication-exporter</name>
+    <name>Service :: Publication Exporter</name>
 
     <properties>
         <db.url>${db.protocol}:${db.subprotocol}${db.separator}${db.alias}</db.url>

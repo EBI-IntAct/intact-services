@@ -11,7 +11,7 @@
     <artifactId>intact-widgets</artifactId>
 
     <packaging>war</packaging>
-    <name>intact-widgets Maven Webapp</name>
+    <name>Service :: Intact Widgets</name>
     <url>http://maven.apache.org</url>
 
     <properties>
