@@ -5,11 +5,12 @@
     <parent>
         <artifactId>service-master</artifactId>
         <groupId>uk.ac.ebi.intact.service</groupId>
-        <version>3.0.7-SNAPSHOT</version>
+        <version>3.0.9-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mutation-update-runner</artifactId>
+    <name>Service :: Mutation Update Runner</name>
 
     <build>
         <resources>
@@ -61,7 +62,7 @@
         <dependency>
             <groupId>uk.ac.ebi.intact.dbupdate</groupId>
             <artifactId>intact-mutation-update</artifactId>
-            <version>2.1.14-SNAPSHOT</version>
+            <version>${dbupdates.version}</version>
         </dependency>
     </dependencies>
 </project>
