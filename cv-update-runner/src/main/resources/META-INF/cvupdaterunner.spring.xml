@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:batch="http://www.springframework.org/schema/batch"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/sprint-aop-3.1.xsd
-           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
-           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" value="classpath*:/META-INF/cv-update.properties"/>
@@ -36,7 +26,7 @@
         <property name="cvUpdater" ref="cvUpdater"/>
         <property name="cvRemapper" ref="obsoleteRemapper"/>
         <property name="errorFactory" ref="errorFactory"/>
-        <property name="reportDirectory" value="/Users/maximiliankoch/IdeaProjects/IntAct/IntAct-Services/cv-update-runner/error"/>
+        <property name="reportDirectory" value="${update.report}"/>
         <property name="rootTermsToExclude">
             <set>
                 <value>MI:0000</value>
@@ -46,7 +36,6 @@
 
     <!-- Cv update runner -->
     <bean id="globalCvUpdateRunner" class="uk.ac.ebi.intact.dbupdate.cv.GlobalCvUpdateRunner">
-
         <property name="cvUpdateManager" ref="cvUpdateManager"/>
     </bean>
 
