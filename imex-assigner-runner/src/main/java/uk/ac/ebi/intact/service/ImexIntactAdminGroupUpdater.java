@@ -1,9 +1,10 @@
 package uk.ac.ebi.intact.service;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
-import uk.ac.ebi.intact.bridges.imexcentral.ImexCentralClient;
-import uk.ac.ebi.intact.bridges.imexcentral.ImexCentralException;
-import uk.ac.ebi.intact.bridges.imexcentral.Operation;
+import psidev.psi.mi.jami.bridges.exception.BridgeFailedException;
+import psidev.psi.mi.jami.bridges.imex.ImexCentralClient;
+import psidev.psi.mi.jami.bridges.imex.Operation;
+import psidev.psi.mi.jami.enricher.exception.EnricherException;
 import uk.ac.ebi.intact.core.context.IntactContext;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.ImexCentralManager;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.actions.PublicationImexUpdaterException;
@@ -19,7 +20,7 @@ import java.util.List;
 
 /**
  * This class will remove IntAct admin group from some publications.
- *
+ * <p>
  * It will add the intact_curators admin group and reset the institution group
  *
  * @author Marine Dumousseau (marine@ebi.ac.uk)
@@ -28,22 +29,21 @@ import java.util.List;
  */
 
 public class ImexIntactAdminGroupUpdater {
-    public static void main( String[] args )
-    {
-        String localTrustStore = System.getProperty( "javax.net.ssl.trustStore" );
-        String localTrustStorePwd = System.getProperty( "javax.net.ssl.keyStorePassword" );
-        if(localTrustStore==null) {
-            System.out.println( "It appears you haven't setup a local trust store (other than the one embedded in the JDK)." +
+    public static void main(String[] args) {
+        String localTrustStore = System.getProperty("javax.net.ssl.trustStore");
+        String localTrustStorePwd = System.getProperty("javax.net.ssl.keyStorePassword");
+        if (localTrustStore == null) {
+            System.out.println("It appears you haven't setup a local trust store (other than the one embedded in the JDK)." +
                     "\nShould you want to specify one, use: -Djavax.net.ssl.trustStore=<path.to.keystore> " +
-                    "\nAnd if it is password protected, use: -Djavax.net.ssl.keyStorePassword=<password>" );
+                    "\nAnd if it is password protected, use: -Djavax.net.ssl.keyStorePassword=<password>");
         } else {
-            System.out.println( "Using local trust store: " + localTrustStore + (localTrustStorePwd == null ? " (no password set)" : " (with password set)" ) );
+            System.out.println("Using local trust store: " + localTrustStore + (localTrustStorePwd == null ? " (no password set)" : " (with password set)"));
         }
 
         // two possible arguments
-        if( args.length != 2 ) {
-            System.err.println( "Usage: selectionAssigner <inputFile> <ADMINToRemove>" );
-            System.exit( 1 );
+        if (args.length != 2) {
+            System.err.println("Usage: selectionAssigner <inputFile> <ADMINToRemove>");
+            System.exit(1);
         }
         final String fileInputName = args[0];
         final String adminToRemove = args[1];
@@ -60,15 +60,14 @@ public class ImexIntactAdminGroupUpdater {
             File inputFile = new File(fileInputName);
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
 
-            try{
+            try {
                 String line = reader.readLine();
 
-                while (line != null){
+                while (line != null) {
                     publicationAcs.add(line);
                     line = reader.readLine();
                 }
-            }
-            finally {
+            } finally {
                 reader.close();
             }
 
@@ -76,31 +75,33 @@ public class ImexIntactAdminGroupUpdater {
                     IntactContext.getCurrentInstance().getSpringContext().getBean("imexCentralManager");
             ia.registerListenersIfNotDoneYet();
 
-            ImexCentralClient client = ia.getImexAdminGroupSynchronizer().getImexCentralClient();
+            ImexCentralClient client = (ImexCentralClient) IntactContext.getCurrentInstance().getSpringContext().getBean("imexCentralClient");
 
             System.out.println("folder where are the log files = " + ia.getImexUpdateConfig().getUpdateLogsDirectory().getAbsolutePath());
 
             System.out.println("Starting the IMEx ADMIN reset a selection of publication in " + fileInputName);
 
-            for (String ac : publicationAcs){
+            // Having a look to the documentation of the intact bridges for this method ("Update the publication admin group given a valid pubmed identifier and a valid operator")
+            // we can infer that the content of the file are in fact pubmed ids so for the new jami-imex-id we can assume the source is pubmed
+            for (String ac : publicationAcs) {
                 Publication intact = IntactContext.getCurrentInstance().getDaoFactory().getPublicationDao().getByShortLabel(ac);
-                if (intact != null){
+                if (intact != null) {
 
                     try {
                         System.out.println("Reset ADMIN group from " + ac);
                         System.out.println("Add INTACT CURATOR " + ac);
-                        client.updatePublicationAdminGroup(ac, Operation.ADD, "INTACT CURATORS");
+                        client.updatePublicationAdminGroup(ac, "pubmed", Operation.ADD, "INTACT CURATORS");
 
-                    }catch (ImexCentralException e) {
+                    } catch (BridgeFailedException e) {
                         e.printStackTrace();
-                    } catch (Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
 
                     try {
                         System.out.println("drop " + adminToRemove);
-                        client.updatePublicationAdminGroup(ac, Operation.DROP, adminToRemove);
-                    } catch (ImexCentralException e) {
+                        client.updatePublicationAdminGroup(ac, "pubmed", Operation.DROP, adminToRemove);
+                    } catch (BridgeFailedException e) {
                         e.printStackTrace();
                     }
 
@@ -110,7 +111,7 @@ public class ImexIntactAdminGroupUpdater {
 
                     } catch (PublicationImexUpdaterException e) {
                         e.printStackTrace();
-                    } catch (ImexCentralException e) {
+                    } catch (EnricherException e) {
                         e.printStackTrace();
                     }
                 }
@@ -118,8 +119,8 @@ public class ImexIntactAdminGroupUpdater {
 
             ReportWriterListener[] writers = ia.getListenerList().getListeners(ReportWriterListener.class);
 
-            if (writers != null){
-                for (ReportWriterListener writer : writers){
+            if (writers != null) {
+                for (ReportWriterListener writer : writers) {
                     try {
                         writer.close();
                     } catch (IOException e) {

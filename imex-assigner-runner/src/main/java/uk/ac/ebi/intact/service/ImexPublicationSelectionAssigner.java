@@ -1,7 +1,7 @@
 package uk.ac.ebi.intact.service;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
-import uk.ac.ebi.intact.bridges.imexcentral.ImexCentralException;
+import psidev.psi.mi.jami.enricher.exception.EnricherException;
 import uk.ac.ebi.intact.core.context.IntactContext;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.ImexCentralManager;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.actions.PublicationImexUpdaterException;
@@ -81,7 +81,7 @@ public class ImexPublicationSelectionAssigner {
                     ia.assignImexAndUpdatePublication(ac);
                 } catch (PublicationImexUpdaterException e) {
                     e.printStackTrace();
-                } catch (ImexCentralException e) {
+                } catch (EnricherException e) {
                     e.printStackTrace();
                 } catch (Exception e){
                     e.printStackTrace();
