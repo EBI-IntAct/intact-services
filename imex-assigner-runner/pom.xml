@@ -4,7 +4,7 @@
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
-        <version>3.0.11</version>
+        <version>3.0.12</version>
     </parent>
 
     <artifactId>imex-assigner-runner</artifactId>
@@ -230,4 +230,13 @@
         </dependency>
 
     </dependencies>
+
+    <!--Temporary solution to find all the imex central dependencies. -->
+    <!--TODO: copy dependencies in ebi nexus-->
+    <repositories>
+        <repository>
+            <id>nexus-ebi-repo-old-snapshots</id>
+            <url>http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo-snapshots/</url>
+        </repository>
+    </repositories>
 </project>
