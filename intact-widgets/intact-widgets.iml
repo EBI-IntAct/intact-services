@@ -16,6 +16,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6">
+    <perl5 />
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -64,7 +65,7 @@
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:2.3.2" level="project" />
     <orderEntry type="library" name="Maven: uk.ac.ebi.intact.commons:intact-commons:2.1.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.geronimo.javamail:geronimo-javamail_1.4_mail:1.8" level="project" />
-    <orderEntry type="library" name="Maven: uk.ac.ebi.intact.dataexchange:intact-cvutils:3.0.11" level="project" />
+    <orderEntry type="library" name="Maven: uk.ac.ebi.intact.dataexchange:intact-cvutils:3.0.12" level="project" />
     <orderEntry type="library" name="Maven: uk.ac.ebi:ols:1.18" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:5.1.6" level="project" />
     <orderEntry type="library" name="Maven: ojb:db-ojb:1.0.3" level="project" />
@@ -86,8 +87,8 @@
     <orderEntry type="library" name="Maven: com.ice:tar:1.0" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.collections:collections-generic:4.01" level="project" />
     <orderEntry type="library" name="Maven: net.sf.opencsv:opencsv:2.3" level="project" />
-    <orderEntry type="library" name="Maven: uk.ac.ebi.intact.dataexchange.psimi:intact-psixml-exchange:3.0.11" level="project" />
-    <orderEntry type="library" name="Maven: uk.ac.ebi.intact.dataexchange.psimi:intact-psixml-converters:3.0.11" level="project" />
+    <orderEntry type="library" name="Maven: uk.ac.ebi.intact.dataexchange.psimi:intact-psixml-exchange:3.0.12" level="project" />
+    <orderEntry type="library" name="Maven: uk.ac.ebi.intact.dataexchange.psimi:intact-psixml-converters:3.0.12" level="project" />
     <orderEntry type="library" name="Maven: uk.ac.ebi.intact.dataexchange:intact-enricher:2.1.10" level="project" />
     <orderEntry type="library" name="Maven: uk.ac.ebi.intact.bridges:intact-picr:2.1.11" level="project" />
     <orderEntry type="library" name="Maven: uk.ac.ebi.chebi.webapps.chebiWS.client:chebiWS-client:2.0" level="project" />
