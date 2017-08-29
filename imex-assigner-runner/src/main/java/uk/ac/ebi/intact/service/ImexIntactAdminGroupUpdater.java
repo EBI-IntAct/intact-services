@@ -1,15 +1,17 @@
 package uk.ac.ebi.intact.service;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import psidev.psi.mi.jami.bridges.exception.BridgeFailedException;
 import psidev.psi.mi.jami.bridges.imex.ImexCentralClient;
 import psidev.psi.mi.jami.bridges.imex.Operation;
 import psidev.psi.mi.jami.enricher.exception.EnricherException;
-import uk.ac.ebi.intact.core.context.IntactContext;
+import psidev.psi.mi.jami.model.Publication;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.ImexCentralManager;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.actions.PublicationImexUpdaterException;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.listener.ReportWriterListener;
-import uk.ac.ebi.intact.model.Publication;
+import uk.ac.ebi.intact.jami.service.PublicationService;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -29,6 +31,7 @@ import java.util.List;
  */
 
 public class ImexIntactAdminGroupUpdater {
+
     public static void main(String[] args) {
         String localTrustStore = System.getProperty("javax.net.ssl.trustStore");
         String localTrustStorePwd = System.getProperty("javax.net.ssl.keyStorePassword");
@@ -51,7 +54,10 @@ public class ImexIntactAdminGroupUpdater {
         System.out.println("File containing publication acs for which we want to reset ADMIN group = " + fileInputName);
         System.out.println("Admin group to remove = " + adminToRemove);
 
-        IntactContext.initContext(new String[]{"/META-INF/jpa-imex-assigner.spring.xml", "/META-INF/imex-assigner.spring.xml"});
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/imex-assigner.spring.xml");
+        ImexCentralManager ia = (ImexCentralManager) ctx.getBean("imexCentralManager");
+        ImexCentralClient client = (ImexCentralClient) ctx.getBean("imexCentralClient");
+        PublicationService service = (PublicationService) ctx.getBean("publicationService");
 
         try {
             System.out.println("Reading file containing publication acs to reset...");
@@ -70,12 +76,8 @@ public class ImexIntactAdminGroupUpdater {
             } finally {
                 reader.close();
             }
-
-            ImexCentralManager ia = (ImexCentralManager)
-                    IntactContext.getCurrentInstance().getSpringContext().getBean("imexCentralManager");
             ia.registerListenersIfNotDoneYet();
 
-            ImexCentralClient client = (ImexCentralClient) IntactContext.getCurrentInstance().getSpringContext().getBean("imexCentralClient");
 
             System.out.println("folder where are the log files = " + ia.getImexUpdateConfig().getUpdateLogsDirectory().getAbsolutePath());
 
@@ -84,7 +86,8 @@ public class ImexIntactAdminGroupUpdater {
             // Having a look to the documentation of the intact bridges for this method ("Update the publication admin group given a valid pubmed identifier and a valid operator")
             // we can infer that the content of the file are in fact pubmed ids so for the new jami-imex-id we can assume the source is pubmed
             for (String ac : publicationAcs) {
-                Publication intact = IntactContext.getCurrentInstance().getDaoFactory().getPublicationDao().getByShortLabel(ac);
+                Publication intact = service.getIntactDao().getPublicationDao().getByPubmedId(ac);
+
                 if (intact != null) {
 
                     try {
@@ -107,7 +110,7 @@ public class ImexIntactAdminGroupUpdater {
 
                     try {
                         System.out.println("Synchronize... " + ac);
-                        ia.updateIntactPublicationHavingIMEx(IntactContext.getCurrentInstance().getDaoFactory().getPublicationDao().getByShortLabel(ac).getAc());
+                        ia.updateIntactPublicationHavingIMEx(service.getIntactDao().getPublicationDao().getByPubmedId(ac).getAc());
 
                     } catch (PublicationImexUpdaterException e) {
                         e.printStackTrace();

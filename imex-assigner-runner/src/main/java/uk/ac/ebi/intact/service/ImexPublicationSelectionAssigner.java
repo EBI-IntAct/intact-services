@@ -1,8 +1,9 @@
 package uk.ac.ebi.intact.service;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import psidev.psi.mi.jami.enricher.exception.EnricherException;
-import uk.ac.ebi.intact.core.context.IntactContext;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.ImexCentralManager;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.actions.PublicationImexUpdaterException;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.listener.ReportWriterListener;
@@ -45,7 +46,7 @@ public class ImexPublicationSelectionAssigner {
 
         System.out.println("File containing publication acs to assign = " + fileInputName);
 
-        IntactContext.initContext(new String[]{"/META-INF/jpa-imex-assigner.spring.xml", "/META-INF/imex-assigner.spring.xml"});
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/imex-assigner.spring.xml");
 
         try {
             System.out.println("Reading file containing publication acs to assign...");
@@ -66,8 +67,7 @@ public class ImexPublicationSelectionAssigner {
                 reader.close();
             }
 
-            ImexCentralManager ia = (ImexCentralManager)
-                    IntactContext.getCurrentInstance().getSpringContext().getBean("imexCentralManager");
+            ImexCentralManager ia = (ImexCentralManager) ctx.getBean("imexCentralManager");
             ia.registerListenersIfNotDoneYet();
 
             System.out.println("folder where are the log files = " + ia.getImexUpdateConfig().getUpdateLogsDirectory().getAbsolutePath());
