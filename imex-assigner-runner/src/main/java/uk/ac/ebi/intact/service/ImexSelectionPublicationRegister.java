@@ -45,7 +45,7 @@ public class ImexSelectionPublicationRegister {
 
         System.out.println("File containing publication acs to register = " + fileInputName);
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/imex-assigner.spring.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/imex-assigner.spring.xml","/META-INF/jpa-imex-assigner.spring.xml");
 
         try {
             System.out.println("Reading file containing publication acs to register...");

@@ -26,7 +26,7 @@ public class ImexAssignerUpdater
             System.out.println( "Using local trust store: " + localTrustStore + (localTrustStorePwd == null ? " (no password set)" : " (with password set)" ) );
         }
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/imex-assigner.spring.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/imex-assigner.spring.xml","/META-INF/jpa-imex-assigner.spring.xml");
         GlobalImexPublicationUpdater ia = (GlobalImexPublicationUpdater)ctx.getBean("globalImexPublicationUpdater");
 
         System.out.println( "folder where are the log files = " + ia.getImexCentralManager().getImexUpdateConfig().getUpdateLogsDirectory().getAbsolutePath() );

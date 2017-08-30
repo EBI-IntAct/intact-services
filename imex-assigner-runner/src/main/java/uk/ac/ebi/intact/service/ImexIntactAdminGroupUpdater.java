@@ -54,7 +54,7 @@ public class ImexIntactAdminGroupUpdater {
         System.out.println("File containing publication acs for which we want to reset ADMIN group = " + fileInputName);
         System.out.println("Admin group to remove = " + adminToRemove);
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/imex-assigner.spring.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/imex-assigner.spring.xml","/META-INF/jpa-imex-assigner.spring.xml");
         ImexCentralManager ia = (ImexCentralManager) ctx.getBean("imexCentralManager");
         ImexCentralClient client = (ImexCentralClient) ctx.getBean("imexCentralClient");
         PublicationService service = (PublicationService) ctx.getBean("publicationService");
