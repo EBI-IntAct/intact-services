@@ -12,7 +12,7 @@
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>service-master</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.13-SNAPSHOT</version>
+    <version>3.0.13</version>
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
