@@ -1,7 +1,8 @@
 package uk.ac.ebi.intact.service;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
-import uk.ac.ebi.intact.core.context.IntactContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.GlobalImexPublicationUpdater;
 import uk.ac.ebi.intact.dataexchange.imex.idassigner.listener.ReportWriterListener;
 
@@ -25,10 +26,8 @@ public class ImexAssignerUpdater
             System.out.println( "Using local trust store: " + localTrustStore + (localTrustStorePwd == null ? " (no password set)" : " (with password set)" ) );
         }
 
-        IntactContext.initContext(new String[]{"/META-INF/jpa-imex-assigner.spring.xml", "/META-INF/imex-assigner.spring.xml"});
-
-        GlobalImexPublicationUpdater ia = (GlobalImexPublicationUpdater)
-                IntactContext.getCurrentInstance().getSpringContext().getBean("globalImexPublicationUpdater");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/META-INF/imex-assigner.spring.xml","/META-INF/jpa-imex-assigner.spring.xml");
+        GlobalImexPublicationUpdater ia = (GlobalImexPublicationUpdater)ctx.getBean("globalImexPublicationUpdater");
 
         System.out.println( "folder where are the log files = " + ia.getImexCentralManager().getImexUpdateConfig().getUpdateLogsDirectory().getAbsolutePath() );
 
