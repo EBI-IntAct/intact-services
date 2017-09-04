@@ -72,6 +72,7 @@
                         </flowInitContext>
                         <!-- see goals wiki page for configuration options -->
                         <allowUntracked>true</allowUntracked>
+                        <noDeploy>true</noDeploy>
                     </configuration>
                 </plugin>
                 <plugin>
