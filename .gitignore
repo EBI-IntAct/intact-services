@@ -22,6 +22,7 @@ release.properties
 # intelliJ idea git ignore
 *.iml
 .idea
+intact-widgets/intact-widgets.iml
 
 # eclipse specific git ignore
 *.pydevproject
