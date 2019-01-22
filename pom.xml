@@ -55,6 +55,8 @@
 
         <finalName>intact-${artifactId}-${db.alias}-${project.version}</finalName>
         <plugins>
+            <!--mvn jgitflow:release-start -Dgit.user=xxxx -Dgit.password=xxxx-->
+            <!--mvn jgitflow:release-finish -Dmaven.javadoc.skip=true -Dgit.user=xxxx -Dgit.password=xxxx-->
             <plugin>
                 <groupId>external.atlassian.jgitflow</groupId>
                 <artifactId>jgitflow-maven-plugin</artifactId>
@@ -71,6 +73,13 @@
                     <!-- see goals wiki page for configuration options -->
                     <allowUntracked>true</allowUntracked>
                     <noDeploy>true</noDeploy>
+                    <username>${git.user}</username>
+                    <password>${git.password}</password>
+                    <pullMaster>true</pullMaster>
+                    <pullDevelop>true</pullDevelop>
+                    <pushReleases>true</pushReleases>
+                    <pushHotfixes>true</pushHotfixes>
+                    <pushFeatures>true</pushFeatures>
                 </configuration>
             </plugin>
         </plugins>
