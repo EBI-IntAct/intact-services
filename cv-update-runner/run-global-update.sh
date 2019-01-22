@@ -1,4 +1,4 @@
-MAVEN_OPTS="-Xms512m -Xmx2024m -XX:MaxPermSize=256m"
+MAVEN_OPTS="-Xms512m -Xmx2024m"
 
 export MAVEN_OPTS
 
