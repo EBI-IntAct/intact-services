@@ -27,10 +27,10 @@
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
         <spring.version>3.2.9.RELEASE</spring.version>
-        <dbupdates.version>2.1.22</dbupdates.version>
+        <dbupdates.version>2.1.23</dbupdates.version>
         <core.version>2.6.12</core.version>
-        <bridges.version>2.1.27</bridges.version>
-        <dataexchange.version>3.0.34</dataexchange.version>
+        <bridges.version>2.1.28</bridges.version>
+        <dataexchange.version>3.0.35</dataexchange.version>
     </properties>
 
     <modules>
@@ -125,13 +125,6 @@
                 <groupId>uk.ac.ebi.intact.core</groupId>
                 <artifactId>intact-annotations</artifactId>
                 <version>${core.version}</version>
-            </dependency>
-
-            <!--TODO: Remove temporary dependency for testing protein update-->
-            <dependency>
-                <groupId>psidev.psi.mi.jami.bridges</groupId>
-                <artifactId>jami-uniprot-protein-api</artifactId>
-                <version>3.2.1-SNAPSHOT</version>
             </dependency>
 
             <!-- Other third party dependencies -->
