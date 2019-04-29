@@ -12,7 +12,7 @@
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>service-master</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.17</version>
+    <version>3.0.18</version>
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
@@ -30,7 +30,7 @@
         <dbupdates.version>2.1.24</dbupdates.version>
         <core.version>2.6.12</core.version>
         <bridges.version>2.1.28</bridges.version>
-        <dataexchange.version>3.0.36</dataexchange.version>
+        <dataexchange.version>3.0.37</dataexchange.version>
     </properties>
 
     <modules>
