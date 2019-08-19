@@ -16,7 +16,6 @@
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
-    <url>http://www.ebi.ac.uk/~intact/devsite/service</url>
 
     <properties>
         <currentVersion>1.5.9</currentVersion>
@@ -27,10 +26,10 @@
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
         <spring.version>3.2.9.RELEASE</spring.version>
-        <dbupdates.version>2.1.24</dbupdates.version>
+        <dbupdates.version>2.1.25</dbupdates.version>
         <core.version>2.6.12</core.version>
         <bridges.version>2.1.28</bridges.version>
-        <dataexchange.version>3.0.37</dataexchange.version>
+        <dataexchange.version>3.0.38</dataexchange.version>
     </properties>
 
     <modules>
