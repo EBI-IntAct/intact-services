@@ -12,7 +12,7 @@
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>service-master</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.20</version>
+    <version>3.0.21</version>
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
@@ -26,10 +26,10 @@
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
         <spring.version>3.2.9.RELEASE</spring.version>
-        <dbupdates.version>2.1.26</dbupdates.version>
+        <dbupdates.version>2.1.27</dbupdates.version>
         <core.version>2.6.12</core.version>
-        <bridges.version>2.1.29</bridges.version>
-        <dataexchange.version>3.0.39</dataexchange.version>
+        <bridges.version>2.1.30</bridges.version>
+        <dataexchange.version>3.0.42</dataexchange.version>
     </properties>
 
     <modules>
