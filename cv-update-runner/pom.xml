@@ -49,7 +49,7 @@
                         <configuration>
                             <executable>java</executable>
                             <arguments>
-                                <argument>-Xmx2024m</argument>
+                                <argument>-Xmx4048m</argument>
                                 <argument>-classpath</argument>
                                 <classpath />
                                 <argument>uk.ac.ebi.intact.service.CvUpdateRunner</argument>
