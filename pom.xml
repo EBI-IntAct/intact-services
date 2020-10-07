@@ -25,7 +25,7 @@
 
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
-        <spring.version>3.2.9.RELEASE</spring.version>
+        <spring.version>5.2.9.RELEASE</spring.version>
         <dbupdates.version>2.1.28</dbupdates.version>
         <core.version>2.6.12</core.version>
         <bridges.version>2.1.31</bridges.version>
