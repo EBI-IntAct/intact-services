@@ -29,7 +29,7 @@
         <dbupdates.version>2.1.31</dbupdates.version>
         <core.version>2.6.12</core.version>
         <bridges.version>2.1.33</bridges.version>
-        <dataexchange.version>3.0.51</dataexchange.version>
+        <dataexchange.version>3.0.52</dataexchange.version>
     </properties>
 
     <modules>
