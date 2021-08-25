@@ -12,7 +12,7 @@
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>service-master</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.25</version>
+    <version>3.0.26</version>
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
@@ -26,10 +26,10 @@
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
         <spring.version>3.2.9.RELEASE</spring.version>
-        <dbupdates.version>2.1.31</dbupdates.version>
+        <dbupdates.version>2.1.35</dbupdates.version>
         <core.version>2.6.12</core.version>
-        <bridges.version>2.1.33</bridges.version>
-        <dataexchange.version>3.0.52</dataexchange.version>
+        <bridges.version>2.1.37</bridges.version>
+        <dataexchange.version>3.0.55</dataexchange.version>
     </properties>
 
     <modules>
@@ -157,6 +157,18 @@
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
                 <version>1.0.20070429</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>1.8.14</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.8.14</version>
             </dependency>
 
             <!--Spring-->
