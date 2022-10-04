@@ -12,7 +12,7 @@
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>service-master</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.26</version>
+    <version>3.0.27-SNAPSHOT</version>
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
@@ -23,13 +23,13 @@
         <jetty.context>${pom.artifactId}</jetty.context>
         <tempH2>${project.build.directory}/db/intact-${artifactId}-${jetty.port}-h2</tempH2>
 
-        <user>${env.USERNAME}</user>
+        <user>${env.USER}</user>
         <appRoot>/intact</appRoot>
         <spring.version>3.2.9.RELEASE</spring.version>
-        <dbupdates.version>2.1.35</dbupdates.version>
-        <core.version>2.6.12</core.version>
-        <bridges.version>2.1.37</bridges.version>
-        <dataexchange.version>3.0.55</dataexchange.version>
+        <dbupdates.version>2.1.36-SNAPSHOT</dbupdates.version>
+        <core.version>3.0.13-SNAPSHOT</core.version>
+        <bridges.version>2.1.38-SNAPSHOT</bridges.version>
+        <dataexchange.version>3.0.57-SNAPSHOT</dataexchange.version>
     </properties>
 
     <modules>
