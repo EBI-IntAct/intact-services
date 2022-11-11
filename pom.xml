@@ -4,7 +4,7 @@
     <parent>
         <groupId>uk.ac.ebi.intact.maven</groupId>
         <artifactId>intact-hibernate-master</artifactId>
-        <version>44</version>
+        <version>46-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -12,7 +12,7 @@
     <groupId>uk.ac.ebi.intact.service</groupId>
     <artifactId>service-master</artifactId>
     <packaging>pom</packaging>
-    <version>3.0.27-SNAPSHOT</version>
+    <version>3.1.0-SNAPSHOT</version>
 
     <name>IntAct Services</name>
     <description>Services Master POM</description>
@@ -25,11 +25,12 @@
 
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
-        <spring.version>3.2.9.RELEASE</spring.version>
-        <dbupdates.version>2.1.35</dbupdates.version>
-        <core.version>2.6.12</core.version>
-        <bridges.version>2.1.37</bridges.version>
-        <dataexchange.version>3.0.55</dataexchange.version>
+        <spring.version>4.3.30.RELEASE</spring.version>
+        <dbupdates.version>2.2.0-SNAPSHOT</dbupdates.version>
+        <core.version>2.7.0-SNAPSHOT</core.version>
+        <bridges.version>2.2.0-SNAPSHOT</bridges.version>
+        <dataexchange.version>3.1.0-SNAPSHOT</dataexchange.version>
+        <psimi.version>1.9.0-SNAPSHOT</psimi.version>
     </properties>
 
     <modules>
@@ -156,7 +157,8 @@
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
-                <version>1.0.20070429</version>
+                <version>${h2.version}</version>
+                <scope>test</scope>
             </dependency>
 
             <dependency>

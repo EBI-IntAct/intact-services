@@ -4,7 +4,7 @@
     <parent>
         <groupId>uk.ac.ebi.intact.service</groupId>
         <artifactId>service-master</artifactId>
-        <version>3.0.27-SNAPSHOT</version>
+        <version>3.1.0-SNAPSHOT</version>
     </parent>
 
 
@@ -121,14 +121,14 @@
 
         <dependency>
             <groupId>uk.ac.ebi.intact.dataexchange.psimi</groupId>
-            <artifactId>intact-psixml-exchange</artifactId>
+            <artifactId>intact-psixml-converters</artifactId>
             <version>${dataexchange.version}</version>
         </dependency>
 
         <dependency>
             <groupId>uk.ac.ebi.intact.dataexchange.psimi</groupId>
             <artifactId>intact-psimitab-converters</artifactId>
-            <version>2.1.10</version>
+            <version>${dataexchange.version}</version>
         </dependency>
 
         <dependency>
