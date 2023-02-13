@@ -26,10 +26,10 @@
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
         <spring.version>4.3.30.RELEASE</spring.version>
-        <dbupdates.version>2.2.0</dbupdates.version>
+        <dbupdates.version>2.2.1-SNAPSHOT</dbupdates.version>
         <core.version>2.7.0</core.version>
         <bridges.version>2.2.0</bridges.version>
-        <dataexchange.version>3.1.0</dataexchange.version>
+        <dataexchange.version>3.1.1-SNAPSHOT</dataexchange.version>
         <psimi.version>1.9.0</psimi.version>
     </properties>
 
