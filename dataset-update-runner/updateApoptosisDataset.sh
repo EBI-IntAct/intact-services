@@ -1,3 +1,5 @@
+#!/bin/bash
+
 MAVEN_OPTS="-Xms512m -Xmx2024m -XX:MaxPermSize=256m"
 
 export MAVEN_OPTS

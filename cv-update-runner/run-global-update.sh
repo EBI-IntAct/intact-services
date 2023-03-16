@@ -1,3 +1,5 @@
+#!/bin/bash
+
 MAVEN_OPTS="-Xms512m -Xmx2024m"
 
 export MAVEN_OPTS
