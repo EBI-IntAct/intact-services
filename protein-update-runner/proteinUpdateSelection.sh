@@ -3,7 +3,6 @@
 #SBATCH --time=06-00:00:00   # walltime
 #SBATCH --ntasks=1   # number of tasks
 #SBATCH --cpus-per-task=5   # number of CPUs Per Task i.e if your code is multi-threaded
-#SBATCH --nodes=1   # number of nodes
 #SBATCH -p production   # partition(s)
 #SBATCH --mem=6G   # memory per node
 #SBATCH -J "PROTEIN_UPDATE"   # job name
