@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#SBATCH --time=06-00:00:00   # walltime
+#SBATCH --ntasks=1   # number of tasks
+#SBATCH --cpus-per-task=5   # number of CPUs Per Task i.e if your code is multi-threaded
+#SBATCH -p production   # partition(s)
+#SBATCH --mem=4G   # memory per node
+#SBATCH -J "IMEX_REGISTER"   # job name
+#SBATCH -o "/nfs/production/hhe/intact/data/imex-assigner-report/register-selection-%j.out"   # job output file
+#SBATCH --mail-user=intact-dev@ebi.ac.uk   # email address
+#SBATCH --mail-type=ALL
+
 MAVEN_OPTS="-Xms512m -Xmx2024m -XX:MaxPermSize=256m"
 
 export MAVEN_OPTS
