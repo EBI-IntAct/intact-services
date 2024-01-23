@@ -17,6 +17,16 @@ public class CvUpdateRunner
         GlobalCvUpdateRunner cm = (GlobalCvUpdateRunner)
                 IntactContext.getCurrentInstance().getSpringContext().getBean("globalCvUpdateRunner");
 
+        System.out.println("getOntologyIDs: " + cm.getCvUpdateManager().getMiOntologyManager().getOntologyIDs());
+        try {
+            System.out.println("isUpToDate: " + cm.getCvUpdateManager().getMiOntologyManager().isUpToDate());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        cm.getCvUpdateManager().getMiOntologyManager().getOntologyIDs().forEach(ontology -> {
+            System.out.println("getOntologyIDs(" + ontology + "): " + cm.getCvUpdateManager().getMiOntologyManager().getOntologyAccess(ontology).getDatabaseName());
+        });
+
         System.out.println( "folder where are the log files = " + cm.getCvUpdateManager().getReportDirectory().getAbsolutePath() );
 
         System.out.println("Starting the global update for PSI-MI and PSI-MOD");
