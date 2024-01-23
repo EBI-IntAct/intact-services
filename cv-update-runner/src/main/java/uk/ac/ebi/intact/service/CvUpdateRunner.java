@@ -30,7 +30,7 @@ public class CvUpdateRunner
         System.out.println( "folder where are the log files = " + cm.getCvUpdateManager().getReportDirectory().getAbsolutePath() );
 
         System.out.println("Starting the global update for PSI-MI and PSI-MOD");
-//        cm.updateAll();
+        cm.updateAll();
 
         System.out.println("Finished the global cv update.");
     }
