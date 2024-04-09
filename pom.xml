@@ -27,10 +27,10 @@
         <appRoot>/intact</appRoot>
         <spring.version>4.3.30.RELEASE</spring.version>
         <dbupdates.version>2.3.5-SNAPSHOT</dbupdates.version>
-        <core.version>2.8.1</core.version>
+        <core.version>2.8.2-SNAPSHOT</core.version>
         <bridges.version>2.2.2</bridges.version>
-        <dataexchange.version>3.3.1</dataexchange.version>
-        <psimi.version>1.10.1</psimi.version>
+        <dataexchange.version>3.3.2-SNAPSHOT</dataexchange.version>
+        <psimi.version>1.10.2-SNAPSHOT</psimi.version>
     </properties>
 
     <modules>
