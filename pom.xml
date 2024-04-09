@@ -30,7 +30,7 @@
         <core.version>3.0.0-SNAPSHOT</core.version>
         <bridges.version>2.2.2</bridges.version>
         <dataexchange.version>4.0.0-SNAPSHOT</dataexchange.version>
-        <psimi.version>1.10.1</psimi.version>
+        <psimi.version>1.10.2-SNAPSHOT</psimi.version>
     </properties>
 
     <modules>
