@@ -29,7 +29,7 @@
         <dbupdates.version>3.0.0-SNAPSHOT</dbupdates.version>
         <core.version>3.0.1-SNAPSHOT</core.version>
         <bridges.version>2.2.3-SNAPSHOT</bridges.version>
-        <dataexchange.version>4.0.1-SNAPSHOT</dataexchange.version>
+        <dataexchange.version>4.0.2-SNAPSHOT</dataexchange.version>
         <psimi.version>1.10.2-SNAPSHOT</psimi.version>
     </properties>
 
