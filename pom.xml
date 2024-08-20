@@ -26,7 +26,7 @@
         <user>${env.USERNAME}</user>
         <appRoot>/intact</appRoot>
         <spring.version>4.3.30.RELEASE</spring.version>
-        <dbupdates.version>3.1.0-SNAPSHOT</dbupdates.version>
+        <dbupdates.version>3.0.2-SNAPSHOT</dbupdates.version>
         <core.version>3.1.0-SNAPSHOT</core.version>
         <bridges.version>2.2.3-SNAPSHOT</bridges.version>
         <dataexchange.version>4.1.0-SNAPSHOT</dataexchange.version>
