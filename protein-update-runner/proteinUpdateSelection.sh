@@ -37,6 +37,6 @@ mkdir target
 # Make sure we are using institution intact by default.
 INTACT_OPTS="-Duk.ac.ebi.intact.INSTITUTION_LABEL=intact -Duk.ac.ebi.intact.AC_PREFIX=EBI"
 
-mvn clean -U -X install -Pupdate-selection,${DATABASE},oracle -Dfolder=${FOLDER} -Dblast=${BLAST} -DinputFile=${INPUT_FILE} -Ddb=oracle -Dmaven.test.skip -Dmaven.repo.local=repository
+mvn clean -U -X install -Pupdate-selection,${DATABASE},postgres -Dfolder=${FOLDER} -Dblast=${BLAST} -DinputFile=${INPUT_FILE} -Ddb=postgres -Dmaven.test.skip -Dmaven.repo.local=repository
 
 ./updateReport.sh ${FOLDER} ${LOG}

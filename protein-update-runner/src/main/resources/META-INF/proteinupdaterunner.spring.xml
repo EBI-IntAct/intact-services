@@ -4,9 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath*:/META-INF/intact-proteinupdate.properties"/>
-    </bean>-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:/META-INF/intact-proteinupdate.properties"/>
+    </bean>
 
     <!-- IntAct -->
     <bean id="intactConfig" class="uk.ac.ebi.intact.core.config.IntactConfiguration">

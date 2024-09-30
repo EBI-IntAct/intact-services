@@ -24,4 +24,4 @@ MAVEN_PROFILE=$3
 
 echo "use profile ${MAVEN_PROFILE}"
 
-mvn -U clean install -Pexport-mitab,${MAVEN_PROFILE} -DpubId=$1 -Dversion=$2 -Dmaven.repo.local=repository -Dmaven.test.skip -Ddb=oracle
+mvn -U clean install -Pexport-mitab,${MAVEN_PROFILE} -DpubId=$1 -Dversion=$2 -Dmaven.repo.local=repository -Dmaven.test.skip -Ddb=postgres

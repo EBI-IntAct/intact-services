@@ -3,7 +3,7 @@
     <parent>
         <artifactId>service-master</artifactId>
         <groupId>uk.ac.ebi.intact.service</groupId>
-        <version>3.2.4</version>
+        <version>4.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

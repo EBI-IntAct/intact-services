@@ -23,4 +23,4 @@ MAVEN_PROFILE=$2
 
 echo "use profile ${MAVEN_PROFILE}"
 
-mvn -U clean install -Pexec,${MAVEN_PROFILE} -Dupdate.report=$1 -Dmaven.repo.local=repository -Dmaven.test.skip -Ddb=oracle
+mvn -U clean install -Pexec,${MAVEN_PROFILE} -Dupdate.report=$1 -Dmaven.repo.local=repository -Dmaven.test.skip -Ddb=postgres
